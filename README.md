@@ -1,0 +1,2 @@
+# capstone_project_Google_Automation
+Automate updating catalog information
