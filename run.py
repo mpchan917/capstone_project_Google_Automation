@@ -22,15 +22,14 @@ def get_items(txt_dir):
                 file_dict["description"] = f.readlines()
                 file_dict["image_name"] = filename[0]+'.jpeg'
             f.close()
-            response = requests.post("http://[linux-instance-external-IP]/fruits", data=file_dict)
             items.append(file_dict)
     return items
 
-get_items(txt_dir)
-print (items)
+def upload(items):
+     for file in items:
+         response = requests.post(url, data=file)
 
-# def upload(items):
-#     for file in items:
-#         response = requests.post(http://[linux-instance-external-IP]/fruits, data=file)
+items = get_items(txt_dir)
+upload(items)
 
 
